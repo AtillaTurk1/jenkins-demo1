@@ -80,6 +80,6 @@ post {
 def sendEmailNotification(duration) {
     emailext body: "Jenkins Pipeline completed in ${duration / 1000} seconds.",
              subject: "Jenkins Pipeline Completed - Build #${BUILD_NUMBER}",
-             to: "your-email@example.com"
+             to: "atilla.furkan48@gmail.com"
 }
       
