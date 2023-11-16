@@ -66,20 +66,3 @@ pipeline {
     }
   }
 }
-post {
-        always {
-            script {
-                def endTime = new Date().getTime()
-                def duration = endTime - startTime
-                echo "Pipeline completed in ${duration / 1000} seconds"
-                sendEmailNotification(duration)
-            }
-        }
-    }
-
-def sendEmailNotification(duration) {
-    emailext body: "Jenkins Pipeline completed in ${duration / 1000} seconds.",
-             subject: "Jenkins Pipeline Completed - Build #${BUILD_NUMBER}",
-             to: "atilla.furkan48@gmail.com"
-}
-      
