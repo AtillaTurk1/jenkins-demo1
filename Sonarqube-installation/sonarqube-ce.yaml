@@ -28,11 +28,3 @@ services:
     volumes:
       - /root/workspace/volume/postgresql/:/var/lib/postgresql
       - /root/workspace/volume/postgresql/data:/var/lib/postgresql/data
-    restart: always
-    environment:
-      POSTGRES_USER: sonar
-      POSTGRES_PASSWORD: sonar
-      POSTGRES_DB: sonarqubedb
-    volumes:
-      - /opt/postgresql/:/var/lib/postgresql
-      - /opt/postgresql/data:/var/lib/postgresql/data
