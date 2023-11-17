@@ -31,7 +31,7 @@ pipeline {
     }
     stage('Build and Push Docker Image') {
       environment {
-        DOCKER_IMAGE = "atillaturk1/jenkins-demo1:${BUILD_NUMBER}"
+        DOCKER_IMAGE = "atillaturk1/jenkins-demo2:${BUILD_NUMBER}"
         // DOCKERFILE_LOCATION = "spring-boot-app/Dockerfile"
         REGISTRY_CREDENTIALS = credentials('docker-cred')
       }
@@ -47,7 +47,7 @@ pipeline {
     }
     stage('Update Deployment File') {
         environment {
-            GIT_REPO_NAME = "jenkins-demo1"
+            GIT_REPO_NAME = "jenkins-demo2"
             GIT_USER_NAME = "AtillaTurk1"
         }
         steps {
