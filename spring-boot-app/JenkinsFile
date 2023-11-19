@@ -10,7 +10,7 @@ pipeline {
       steps {
         sh 'echo passed'
         //git branch: 'main', url: 'https://github.com/AtillaTurk1/jenkins-demo1.git'
-        userRemoteConfigs: [[credentialsId: 'PUBLIC_KEY', 
+        userRemoteConfigs:[[credentialsId: 'PUBLIC_KEY', 
         url: 'git@github.com:AtillaTurk1/jenkins-demo5.git']]     
       }
     }
