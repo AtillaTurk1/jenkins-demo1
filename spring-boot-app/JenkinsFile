@@ -24,11 +24,11 @@ pipeline {
       }
       post {
         always {
-        // Publish Surefire test results
-        junit 'spring-boot-app/target/surefire-reports/*.xml'
+          // Publish Surefire test results
+          junit 'spring-boot-app/target/surefire-reports/*.xml'
+        }
+      }
     }
-  }
-}
     stage('Static Code Analysis') {
       environment {
         SONAR_URL ="http://10.0.2.15:9000"
