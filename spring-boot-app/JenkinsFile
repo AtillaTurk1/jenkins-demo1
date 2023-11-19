@@ -8,9 +8,8 @@ pipeline {
   stages {
     stage('Checkout') {
       steps {
-          checkout([$class: 'GitSCM', branches: [[name: 'main']], userRemoteConfigs: [[credentialsId: 'PUBLIC_KEY', url: 'git@github.com:AtillaTurk1/jenkins-demo5.git']]])
-        //sh 'echo passed'
-        //git branch: 'main', url: 'https://github.com/AtillaTurk1/jenkins-demo1.git'     
+        sh 'echo passed'
+        //git branch: 'main', url: 'https://github.com/AtillaTurk1/jenkins-demo1.git'
       }
     }
     stage('Build and Test') {
