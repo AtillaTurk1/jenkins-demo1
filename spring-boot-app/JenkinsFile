@@ -15,10 +15,20 @@ pipeline {
     stage('Build and Test') {
       steps {
         sh 'ls -ltr'
+    
         // build the project and create a JAR file
-        sh 'cd spring-boot-app && mvn clean package'
+         sh 'cd spring-boot-app && mvn clean package'
+    
+        // run tests and generate Surefire reports
+        sh 'cd spring-boot-app && mvn test'
       }
+      post {
+        always {
+        // Publish Surefire test results
+        junit 'spring-boot-app/target/surefire-reports/*.xml'
     }
+  }
+}
     stage('Static Code Analysis') {
       environment {
         SONAR_URL ="http://10.0.2.15:9000"
